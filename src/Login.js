@@ -2,23 +2,7 @@ import React from "react";
 
 export default class Form extends React.Component {
   state = {
-    fields: {}
-  };
-
-  onChange = updatedValue => {
-    this.setState({
-      fields: {
-        ...this.state.fields,
-        ...updatedValue
-      }
-    });
-  };
-
-  state = {
-    firstName: "",
-    lastName: "",
     username: "",
-    email: "",
     password: ""
   };
 
@@ -30,20 +14,15 @@ export default class Form extends React.Component {
   };
 
   onSubmit = e => {
+    console.log('login...');
     e.preventDefault();
     // this.props.onSubmit(this.state);
     this.setState({
-      firstName: "",
-      lastName: "",
       username: "",
-      email: "",
       password: ""
     });
     this.props.onChange({
-      firstName: "",
-      lastName: "",
       username: "",
-      email: "",
       password: ""
     });
   };
@@ -52,30 +31,9 @@ export default class Form extends React.Component {
     return (
       <form>
         <input
-          name="firstName"
-          placeholder="First name"
-          value={this.state.firstName}
-          onChange={e => this.change(e)}
-        />
-        <br />
-        <input
-          name="lastName"
-          placeholder="Last name"
-          value={this.state.lastName}
-          onChange={e => this.change(e)}
-        />
-        <br />
-        <input
           name="username"
           placeholder="Username"
           value={this.state.username}
-          onChange={e => this.change(e)}
-        />
-        <br />
-        <input
-          name="email"
-          placeholder="Email"
-          value={this.state.email}
           onChange={e => this.change(e)}
         />
         <br />
